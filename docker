@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -x
+tag="benjaminedwardwebb/uwsgi-nginx"
+name="latest"
+docker build -t "${tag}" .
+docker run \
+  -p 89:89 \
+  --rm \
+  --name="${name}" \
+  "${tag}"
